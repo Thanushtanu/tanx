@@ -28,7 +28,7 @@ The main objectives of this project are:
 
 The project is structured into the following components:
 - **Data**: Contains the dataset file `orders.csv`.
-- **Scripts**: Contains the main script `analysis.py` that performs data analysis.
+- **Scripts**: Contains the main script `main.py` that performs data analysis.
 - **Docker**: Contains the `Dockerfile` and other necessary files to build and run the project in a Docker container.
 
 ### Key Components
@@ -66,7 +66,7 @@ The solution is implemented in Python, using the pandas library for data manipul
 
 3. **Run the Docker Container**:
    ```bash
-  docker run -p 4000:80 project-tanx
+   docker run -p 4000:80 project-tanx
    ```
 
 The command docker run -p 4000:80 project-tanx is used to start a Docker container from an image named project-tanx, with specific port mapping between the host machine and the container.
