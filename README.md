@@ -32,7 +32,7 @@ The project is structured into the following components:
 - **Docker**: Contains the `Dockerfile` and other necessary files to build and run the project in a Docker container.
 
 ### Key Components
-- `analysis.py`: The main script for data analysis, including functions to calculate monthly revenue, product revenue, customer revenue, and identifying top customers.
+- `main.py`: The main script for data analysis, including functions to calculate monthly revenue, product revenue, customer revenue, and identifying top customers.
 - `Dockerfile`: Defines the Docker image configuration for the project.
 
 ## Implementation
@@ -55,21 +55,29 @@ The solution is implemented in Python, using the pandas library for data manipul
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/online-store-revenue-analysis.git
-   cd online-store-revenue-analysis
+   git clone https://github.com/Thanushtanu/tanx/tree/main
+   cd main
    ```
 
 2. **Build the Docker Image**:
    ```bash
-   docker build -t revenue-analysis .
+   docker build -t project-tanx .
    ```
 
 3. **Run the Docker Container**:
    ```bash
-   docker run -v $(pwd)/data:/app/data revenue-analysis
+  docker run -p 4000:80 project-tanx
    ```
 
-   The `-v $(pwd)/data:/app/data` flag mounts the `data` directory from your local machine into the container, allowing the script to access the `orders.csv` file.
+The command docker run -p 4000:80 project-tanx is used to start a Docker container from an image named project-tanx, with specific port mapping between the host machine and the container.
+
+docker run: This command is used to create and start a Docker container from an image.
+
+-p 4000:80: This flag specifies the port mapping between the host machine and the container. It maps port 4000 on the host machine to port 80 on the container. This means that any traffic directed to http://localhost:4000 on the host machine will be forwarded to port 80 inside the container.
+
+4000: The port on the host machine.
+80: The port inside the container where the application is listening.
+project-tanx: The name of the Docker image from which the container is created. This image must be available locally or accessible from a Docker registry.
 
 4. **View the Output**:
    The script will print the monthly revenue, product revenue, customer revenue, and the top 10 customers by revenue.
@@ -83,7 +91,7 @@ The results provide valuable insights into the revenue generation patterns of th
 Further analysis can include:
 - Customer segmentation based on spending patterns.
 - Predictive analytics for future sales trends.
-- Analysis of customer churn and retention strategies.
+
 
 ## License
 
